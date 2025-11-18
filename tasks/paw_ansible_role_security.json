@@ -1,0 +1,160 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Execute the entire Ansible role imperatively",
+  "input_method": "environment",
+  "parameters": {
+    "security_autoupdate_reboot": {
+      "description": "Autoupdate mail settings used on Debian/Ubuntu only.",
+      "type": "Optional[String]"
+    },
+    "security_autoupdate_reboot_time": {
+      "description": "Ansible role variable (default: 03:00)",
+      "type": "Optional[String]"
+    },
+    "security_autoupdate_mail_to": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "origin": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "package": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "security_ssh_port": {
+      "description": "Ansible role variable (default: 22)",
+      "type": "Optional[Integer]"
+    },
+    "security_ssh_password_authentication": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_permit_root_login": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_usedns": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_permit_empty_password": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_challenge_response_auth": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_gss_api_authentication": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_x11_forwarding": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "security_sshd_state": {
+      "description": "Ansible role variable (default: started)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_restart_handler_state": {
+      "description": "Ansible role variable (default: restarted)",
+      "type": "Optional[String]"
+    },
+    "security_ssh_allowed_users": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_ssh_allowed_groups": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_sudoers_passwordless": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_sudoers_passworded": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_autoupdate_enabled": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "security_autoupdate_blacklist": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_autoupdate_additional_origins": {
+      "description": "Ansible role variable (default: [])",
+      "type": "Optional[Array]"
+    },
+    "security_autoupdate_mail_on_error": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "security_fail2ban_enabled": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "security_fail2ban_custom_configuration_template": {
+      "description": "Ansible role variable (default: jail.local.j2)",
+      "type": "Optional[String]"
+    },
+    "par_tags": {
+      "description": "An array of Ansible tags to execute (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_skip_tags": {
+      "description": "An array of Ansible tags to skip (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_start_at_task": {
+      "description": "The name of the task to start execution at (optional)",
+      "type": "Optional[String]"
+    },
+    "par_limit": {
+      "description": "Limit playbook execution to specific hosts (optional)",
+      "type": "Optional[String]"
+    },
+    "par_verbose": {
+      "description": "Enable verbose output from Ansible (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_check_mode": {
+      "description": "Run Ansible in check mode (dry-run) (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_timeout": {
+      "description": "Timeout in seconds for playbook execution (optional)",
+      "type": "Optional[Integer]"
+    },
+    "par_user": {
+      "description": "Remote user to use for Ansible connections (optional)",
+      "type": "Optional[String]"
+    },
+    "par_env_vars": {
+      "description": "Additional environment variables for ansible-playbook execution (optional)",
+      "type": "Optional[Hash]"
+    }
+  },
+  "implementations": [
+    {
+      "name": "paw_ansible_role_security.sh",
+      "requirements": [
+        "shell"
+      ],
+      "input_method": "environment"
+    },
+    {
+      "name": "paw_ansible_role_security.ps1",
+      "requirements": [
+        "powershell"
+      ],
+      "input_method": "environment"
+    }
+  ]
+}
